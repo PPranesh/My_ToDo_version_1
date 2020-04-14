@@ -1,5 +1,3 @@
-![](https://github.com/PPranesh/My_ToDo_version_1/blob/master/public/css/assets/images/logo.png)
-
 [![NPM Version](https://img.shields.io/npm/v/node)](https://img.shields.io/npm/l/todo-list-v1)
 [![Issues](https://img.shields.io/github/issues/PPranesh/My_ToDo_version_1)](https://github.com/PPranesh/My_ToDo_version_1/issues)
 [![GitHub followers](https://img.shields.io/github/followers/PPranesh?style=social)](https://github.com/PPranesh/My_ToDo_version_1/MyBadges)
