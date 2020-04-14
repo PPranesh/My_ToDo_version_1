@@ -40,5 +40,5 @@ app.post("/work", function(req, res){
 });
 
 app.listen(3000, function(){
-    console.log("server started!!");
+    console.log("server started!! runs on port 3000");
 });
