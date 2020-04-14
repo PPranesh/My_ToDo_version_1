@@ -1,7 +1,6 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Issues](https://img.shields.io/github/issues/PPranesh/My_ToDo_version_1)](https://github.com/PPranesh/My_ToDo_version_1/issues)
 [![Last Commit](https://img.shields.io/github/last-commit/PPranesh/My_ToDo_version_1)]()
-
 [![Read the Docs](https://readthedocs.org/projects/yt2mp3/badge/?version=latest)](https://yt2mp3.readthedocs.io/en/latest/?badge=latest)
 [![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat)](https://github.com/tterb/hyde/blob/master/docs/CODE_OF_CONDUCT.md) 
 
