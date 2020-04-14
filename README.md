@@ -12,7 +12,6 @@
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 [![Read the Docs](https://readthedocs.org/projects/yt2mp3/badge/?version=latest)](https://yt2mp3.readthedocs.io/en/latest/?badge=latest)
 [![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat)](https://github.com/tterb/hyde/blob/master/docs/CODE_OF_CONDUCT.md) 
-[![forthebadge](https://forthebadge.com/images/featured/featured-built-with-love.svg)](http://forthebadge.com)
 
 ** This Project is made to get a knowledge on EJS Module, NPM Modules and some Js Concepts. **
 
@@ -40,6 +39,7 @@ server started!! runs on port 3000
 
 * Thanks to [Dr. Angela Yu](https://www.udemy.com/user/4b4368a3-b5c8-4529-aa65-2056ec31f37e/) for the teaching me the concept to become a Full Stack Developer.
 
+[![forthebadge](https://forthebadge.com/images/featured/featured-built-with-love.svg)](http://forthebadge.com)
 <!-- # Badges -->
 
 <!-- ## License -->
