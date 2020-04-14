@@ -1,4 +1,3 @@
-
 exports.getDate =  () => {
         
     const weekDay = new Date();
@@ -19,6 +18,5 @@ exports.getDay = function () {
         weekday: "long"
     };
 
-    return weekDay.toLocaleDateString("en-US",options);
-    
+    return weekDay.toLocaleDateString("en-US",options);    
 };

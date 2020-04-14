@@ -29,7 +29,6 @@ app.post("/", function(req, res) {
         todoItems.push(todo);
         res.redirect("/");
     }
-    
 });
 
 app.get("/work", function(req, res){
