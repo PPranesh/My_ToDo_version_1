@@ -8,6 +8,12 @@
 
 **This Project is made to get a knowledge on EJS Module, NPM Modules and some Js Concepts.**
 
+### Project Dependency
+
+```javascript
+npm install         // to install all dependencies
+```
+
 ### Server
 
 Server file named `server.js`
