@@ -1,4 +1,4 @@
-![ToDo List Version 1](assets/images/logo.png)
+![ToDo List Version 1](/public/assets/images/logo.png)
 
 [![NPM Version](https://img.shields.io/npm/v/node)](https://img.shields.io/npm/l/todo-list-v1)
 [![Issues](https://img.shields.io/github/issues/PPranesh/My_ToDo_version_1)](https://github.com/PPranesh/My_ToDo_version_1/issues)
@@ -13,9 +13,11 @@
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
-[![forthebadge](https://forthebadge.com/images/featured/featured-built-with-love.svg)](http://forthebadge.com)
 [![Read the Docs](https://readthedocs.org/projects/yt2mp3/badge/?version=latest)](https://yt2mp3.readthedocs.io/en/latest/?badge=latest)
 [![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat)](https://github.com/tterb/hyde/blob/master/docs/CODE_OF_CONDUCT.md) 
+
+<br>
+[![forthebadge](https://forthebadge.com/images/featured/featured-built-with-love.svg)](http://forthebadge.com)
 
 ** This Project is made to get a knowledge on EJS Module, NPM Modules and some Js Concepts. **
 
