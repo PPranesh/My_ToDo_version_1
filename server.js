@@ -34,7 +34,7 @@ app.post("/", function(req, res) {
 app.get("/work", function(req, res){
     res.render("lists", {itemTitle: "Work To-Do", newItem: worktodoItems});
 });
-    
+
 app.post("/work", function(req, res){
     res.redirect("/work");
 });
