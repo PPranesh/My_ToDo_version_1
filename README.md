@@ -11,7 +11,7 @@
 [![Read the Docs](https://readthedocs.org/projects/yt2mp3/badge/?version=latest)](https://yt2mp3.readthedocs.io/en/latest/?badge=latest)
 [![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat)](https://github.com/tterb/hyde/blob/master/docs/CODE_OF_CONDUCT.md) 
 
-** This Project is made to get a knowledge on EJS Module, NPM Modules and some Js Concepts. **
+**This Project is made to get a knowledge on EJS Module, NPM Modules and some Js Concepts.**
 
 ### Server
 
