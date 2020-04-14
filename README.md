@@ -13,22 +13,11 @@
 
 ** This Project is made to get a knowledge on EJS Module, NPM Modules and some Js Concepts. **
 
-## List of Tabs
-
-* [default Tab](#default_tab)
-```javascript
-localhost:3000
-```
-* [Work Todo Tab](#work_todo_tab)
-```javascript
-localhost:3000/work
-```
-
 ### Server
 
-Server file named `server.js`.
+Server file named `server.js`
 
-### Host - 3000
+### PORT - 3000
 
 Here PORT 3000 is being used as default port.
 
@@ -37,6 +26,16 @@ Here PORT 3000 is being used as default port.
 node server.js       // command to run the server
 server started!! runs on port 3000
 
+```
+## List of Tabs
+
+* [Default Tab](#default_tab)
+```javascript
+localhost:3000
+```
+* [Work Todo Tab](#work_todo_tab)
+```javascript
+localhost:3000/work
 ```
 
 ## Thank you
