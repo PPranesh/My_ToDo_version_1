@@ -11,11 +11,12 @@
         <div class="item">   
             <input type="checkbox" class="check-box">
             <p><strong><%= newItem[i] %></strong></p>
+            <button class="x_button">x</button>    
         </div>
     <% } %>
 
     <form class="item" action="/" method="POST">
-        <input id="todos" type="text" name="todos" maxLength="25" placeholder="Enter new ToDo" autocomplete="off">
+        <input id="todos" type="text" name="todos" maxLength="25" placeholder="Enter new ToDo" autocomplete="off" required>
         <button type="submit" name="listType" value=<%= itemTitle %> >+</button>
     </form>
 

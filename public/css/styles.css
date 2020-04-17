@@ -9,6 +9,18 @@ h1 {
   padding: 10px;
 }
 
+.x_button {
+  min-height: 50px;
+  width: 50px;
+  font-size: 30px;
+  color: #000000;
+  background-color: #00000000;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-width: 0;
+  font-family: cursive;
+}
+
 .box {
   max-width: 400px;
   margin: 50px auto;
