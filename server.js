@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const date = require(__dirname+"/date.js");
 
 const app = express();
-let PORT = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
@@ -40,6 +39,6 @@ app.post("/work", function(req, res){
     res.redirect("/work");
 });
 
-app.listen(PORT, function(){
+app.listen(process.env.PORT || 3000, function(){
     console.log("server started!!");
 });
