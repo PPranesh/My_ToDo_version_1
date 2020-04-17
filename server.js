@@ -8,13 +8,12 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
-const todoItems = ["My Dream Job", "My MacBook Air", "My Cycle"];
-const worktodoItems = [];
+let todoItems = ["My Dream Job", "My MacBook Air", "My Cycle"];
+let worktodoItems = [];
 
 app.get("/", function(req, res){
-    
     var day = date.getDay()+", "+date.getDate();
-    
+
     res.render("lists", {itemTitle: day, newItem: todoItems});
 });
 
@@ -22,17 +21,28 @@ app.post("/", function(req, res) {
 
     let todo = req.body.todos;
 
-    if (req.body.listType === "Work") {
-        worktodoItems.push(todo);
-        res.redirect("/work");
-    } else {
-        todoItems.push(todo);
+    if (req.body.buttonType === "clearButton") {
+
+        worktodoItems = [];
+        todoItems = [];
+
         res.redirect("/");
+
+    } else {
+
+        if (req.body.listType === "Work") {
+            worktodoItems.push(todo);
+            res.redirect("/work");
+        } else {
+            todoItems.push(todo);
+            res.redirect("/");
+        }
     }
+
 });
 
 app.get("/work", function(req, res){
-    res.render("lists", {itemTitle: "Work To-Do", newItem: worktodoItems});
+    res.render("lists", {itemTitle: "Work", newItem: worktodoItems});
 });
 
 app.post("/work", function(req, res){

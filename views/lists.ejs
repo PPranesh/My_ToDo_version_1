@@ -5,21 +5,26 @@
 </div>
 
 <div class="box">
-
-    <% var len = newItem.length; %>
-    <% for (var i=0; i<len ; i++) { %>
-        <div class="item">   
-            <input type="checkbox" class="check-box">
-            <p><strong><%= newItem[i] %></strong></p>
-            <button class="x_button">x</button>    
-        </div>
-    <% } %>
+    
+        <% var len = newItem.length; %>
+        <% for (var i=0; i<len ; i++) { %>
+            <div class="item">   
+                <input type="checkbox" class="check-box">
+                <p><strong><%= newItem[i] %></strong></p>            
+                
+            </div>
+        <% } %>
 
     <form class="item" action="/" method="POST">
         <input id="todos" type="text" name="todos" maxLength="25" placeholder="Enter new ToDo" autocomplete="off" required>
-        <button type="submit" name="listType" value=<%= itemTitle %> >+</button>
+        <button id="add" type="submit" name="listType" value=<%= itemTitle %> >+</button>
     </form>
 
 </div>
+
+<form action="/" method="post">
+    <button method="post" id="clear" type="submit" name="buttonType" value="clearButton"><i class="fas fa-trash"></i></button>
+</form>
+
 
 <%- include("footer") -%>

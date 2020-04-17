@@ -1,6 +1,7 @@
 html {
   background-image: -webkit-linear-gradient(60deg, #000000 50%, #ffffff 50%);
-  height: 716px;
+  min-height: 730px;
+  min-width: 440px;
   font-family: "Ubuntu", sans-serif;
 }
 
@@ -9,16 +10,31 @@ h1 {
   padding: 10px;
 }
 
-.x_button {
+#clear {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  height: 60px;
+  width: 60px;
+  border-radius: 15%;
+  float: right;
+  border-color: transparent;
+  background-color: #ffc107;
+  color: #000000;
+  font-size: 30px;
+  border-width: 0;
+}
+
+#add {
   min-height: 50px;
   width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #000000;
+  color: #ffc107;
   font-size: 30px;
-  color: #000000;
-  background-color: #00000000;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  margin: 0 auto;
   border-width: 0;
-  font-family: cursive;
 }
 
 .box {
@@ -65,18 +81,6 @@ p {
 form {
   text-align: center;
   margin-left: 20px;
-}
-
-button {
-  min-height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  border-color: transparent;
-  background-color: #000000;
-  color: #ffc107;
-  font-size: 30px;
-  margin: 0 auto;
-  border-width: 0;
 }
 
 input[type="text"] {
