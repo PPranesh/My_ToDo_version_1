@@ -12,7 +12,7 @@ let todoItems = ["My Dream Job", "My MacBook Air", "My Cycle"];
 let worktodoItems = [];
 
 app.get("/", function(req, res){
-    var day = date.getDay()+", "+date.getDate();
+    var day = date.gettingIndiaDate();
 
     res.render("lists", {itemTitle: day, newItem: todoItems});
 });
