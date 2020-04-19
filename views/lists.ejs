@@ -6,14 +6,13 @@
 
 <div class="box">
     
-        <% var len = newItem.length; %>
-        <% for (var i=0; i<len ; i++) { %>
+        <% newItem.forEach(function(todo) { %>
             <div class="item">   
                 <input type="checkbox" class="check-box">
-                <p><strong><%= newItem[i] %></strong></p>            
+                <p><strong><%= todo.item %></strong></p>            
                 
             </div>
-        <% } %>
+        <% }); %>
 
     <form class="item" action="/" method="POST">
         <input id="todos" type="text" name="todos" maxLength="25" placeholder="Enter new ToDo" autocomplete="off" required>
@@ -22,7 +21,7 @@
 
 </div>
 
-<form action="/" method="post">
+<form action="/" method="get">
     <button method="post" id="clear" type="submit" name="buttonType" value="clearButton"><i class="fas fa-trash"></i></button>
 </form>
 
