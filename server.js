@@ -20,22 +20,19 @@ const todoItemsSchema = new mongoose.Schema({
     item: {
         type: String,
         required: [true, 'todo not entered!']
-    },
-    check: Boolean
+    }
 });
 
-const worktodoItemsSchema = new mongoose.Schema({
-    item: {
-        type: String,
-        required: [true, 'todo not entered!']
-    },
-    check: Boolean
+const todoListSchema = new mongoose.Schema ({
+    _id: String,
+    todoItemList: todoItemsSchema
 });
 
 const todoItems = mongoose.model("todos", todoItemsSchema);
-const worktodoItems = mongoose.model("workTodos", worktodoItemsSchema);
+const todoItemList = mongoose.model("todoItemList", todoListSchema);
 
 app.get("/", function(req, res){
+
     var day = date.gettingIndiaDate();   
 
     todoItems.find(function(error, todoList){
@@ -45,57 +42,68 @@ app.get("/", function(req, res){
             res.render("lists", {itemTitle: day, newItem: todoList});        
         }
     });
-
-    // res.render("lists", {itemTitle: day, newItem: todoItems});
+    
 });
 
-app.post("/", function(req, res) {
+app.post("/", function(req, res){
 
-    let todoItem = req.body.todos;
+    let todoItem = req.body.inputsTodos;
 
-    if (req.body.buttonType === "clearButton") {
+    let todo = new todoItems({
+        item: todoItem,
+    });
+    todo.save();
 
-        // worktodoItems = [];
-        // todoItems = [];
- 
-        res.redirect("/");
+    // todoItems.push(todo);
+    res.redirect("/");
 
-    } else {
+});
 
-        if (req.body.listType === "Work") {
+app.post("/delete", function(req, res) {
 
-            let todo = new worktodoItems({
-                item: todoItem
-            });
-            todo.save();
+    let checkId = req.body.check;
+    
+    todoItems.findByIdAndDelete({_id: checkId}, function(err){
 
-            // worktodoItems.push(todo);
-            res.redirect("/work");
-        } else {
-
-            let todo = new todoItems({
-                item: todoItem,
-            });
-            todo.save();
-
-            // todoItems.push(todo);
+        if (!err) {
             res.redirect("/");
         }
-    }
+
+    });
+
 
 });
+
+
+app.get("/:dirName", function(req, res) {
+
+    // let todoItem = req.body.inputsTodos;
+
+    let dirName = req.params.dirName;
+
+    // const item = new todoItems({
+    //     item: todoItem
+    // });
+    // item.save();
+
+    // const itemLists = new todoItemList({
+    //     _id: dirName,
+    //     todoItemList: item
+    // });
+
+    // itemLists.save();
+    
+    res.render("lists", {itemTitle: dirName, newItem: []});
+
+
+});
+
+
+
 
 app.get("/work", function(req, res){
 
-    worktodoItems.find(function(error, workTodoList){
-        if (error) {
-            console.log(error);
-        } else {
-            res.render("lists", {itemTitle: "Work", newItem: workTodoList});
-        }
-    });
-
-    // res.render("lists", {itemTitle: "Work", newItem: worktodoItems});
+    res.render("lists", {itemTitle: "Work", newItem: worktodoItems});
 });
 
 app.post("/work", function(req, res){

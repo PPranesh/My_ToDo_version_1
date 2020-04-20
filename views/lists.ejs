@@ -6,24 +6,24 @@
 
 <div class="box">
     
+
+    <form action="/delete" method="post">
+        
         <% newItem.forEach(function(todo) { %>
             <div class="item">   
-                <input type="checkbox" class="check-box">
-                <p><strong><%= todo.item %></strong></p>            
+                <input type="checkbox" class="check-box" name="check" value="<%= todo._id %>" onchange="this.form.submit()">
+                <p><%= todo.item %></p>            
                 
             </div>
         <% }); %>
+    
+    </form>
 
     <form class="item" action="/" method="POST">
-        <input id="todos" type="text" name="todos" maxLength="25" placeholder="Enter new ToDo" autocomplete="off" required>
+        <input id="todos" type="text" name="inputsTodos" maxLength="25" placeholder="Enter new ToDo" autocomplete="off" required>
         <button id="add" type="submit" name="listType" value=<%= itemTitle %> >+</button>
     </form>
 
 </div>
-
-<form action="/" method="get">
-    <button method="post" id="clear" type="submit" name="buttonType" value="clearButton"><i class="fas fa-trash"></i></button>
-</form>
-
 
 <%- include("footer") -%>
