@@ -31,7 +31,7 @@ exports.gettingIndiaDate = () => {
     m = m-1;
     let dayy = Number(getExactDay(month[m]+' '+d+', '+y));
 
-    return (wordDay[dayy]+", "+month[m]+" "+d);
+    return (wordDay[dayy]+" - "+month[m]+" "+d);
 };
 
 function getExactDay(e_date) {
