@@ -1,5 +1,6 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Forks](https://img.shields.io/github/forks/PPranesh/My_ToDo_v1)](https://github.com/PPranesh/My_ToDo_v1/issues)
+[![GitHub stars](https://img.shields.io/github/stars/tterb/playmusic.svg?style=social&label=Star)](https://github.com/PPranesh/My_ToDo_v1/MyBadges)
 [![Issues](https://img.shields.io/github/issues/PPranesh/My_ToDo_v1)](https://github.com/PPranesh/My_ToDo_v1/issues)
 [![Last Commit](https://img.shields.io/github/last-commit/PPranesh/My_ToDo_v1)]()
 [![Read the Docs](https://readthedocs.org/projects/yt2mp3/badge/?version=latest)](https://yt2mp3.readthedocs.io/en/latest/?badge=latest)
@@ -7,7 +8,7 @@
 
 # My ToDo Version 1
 
-**This Project is made to get a knowledge on EJS Module, NPM Modules and some Js Concepts.**
+**This Project is made to get a knowledge on ExpressJs, EJS, MongoDB, Mongoose, NPM Modules and some Js Concepts.**
 
 ### Project Dependency
 
@@ -35,9 +36,9 @@ server started!! runs on port 3000
 ```javascript
 localhost:3000
 ```
-* [Work Todo Tab](#work_todo_tab)
+* [Dynamic Tab](#dynamic_tab)
 ```javascript
-localhost:3000/work
+localhost:3000/tab_name_you_wish
 ```
 
 ## Thank you
@@ -61,26 +62,9 @@ localhost:3000/work
 [![forthebadge](https://forthebadge.com/images/featured/featured-built-with-love.svg)](http://forthebadge.com)
 <!-- # Badges -->
 
-<!-- ## License -->
-<!-- [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs) -->
-<!-- [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/) -->
-<!-- [![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0) -->
-
 <!-- ## Pull Requests
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/cdnjs/cdnjs.svg?style=flat)]() -->
 
 <!-- ## Contributors -->
 <!-- [![GitHub contributors](https://img.shields.io/github/contributors/cdnjs/cdnjs.svg?style=flat)]()   -->
 
-<!-- <br> -->
-
-<!-- ## Package Managers
-#### NPM   -->
-
-<!-- <!-- [![NPM License](https://img.shields.io/npm/l/all-contributors.svg?style=flat)](https://github.com/tterb/hyde/blob/master/LICENSE) -->
-
-
-<!-- ## Social Buttons -->
-
-<!-- [![GitHub stars](https://img.shields.io/github/stars/tterb/playmusic.svg?style=social&label=Star)](https://github.com/JonSnow/MyBadges) -->
-<!-- [![GitHub forks](https://img.shields.io/github/forks/tterb/playmusic.svg?style=social&label=Fork)](https://github.com/JonSnow/MyBadges) -->  
