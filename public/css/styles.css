@@ -103,3 +103,12 @@ input[type="text"]:focus {
   width: 22px;
   height: 22px;
 }
+
+@media screen and (max-width: 600px) {
+  html {
+    background-image: -webkit-linear-gradient(65deg, #2B32B2 50%, #1488CC 50%);
+    min-height: 730px;
+    min-width: 360px;
+    font-family: 'Ubuntu', sans-serif;
+  }
+}
