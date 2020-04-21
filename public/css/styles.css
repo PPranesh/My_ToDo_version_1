@@ -108,7 +108,19 @@ input[type="text"]:focus {
   html {
     background-image: -webkit-linear-gradient(65deg, #2B32B2 50%, #1488CC 50%);
     min-height: 730px;
-    min-width: 360px;
+    min-width: 320px;
     font-family: 'Ubuntu', sans-serif;
+  }
+  
+  #add {
+    min-height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: #2B32B2;
+    color: #F8F9F9;
+    font-size: 30px;
+    margin: 0 20px 0 auto;
+    border-width: 0;
   }
 }
