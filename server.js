@@ -1,15 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const date = require(__dirname+"/date.js");
+// const date = require(__dirname+"/date.js");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 
 const app = express();
 
-let day = "";
-let wordDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "undefined"];
-
-mongoose.connect("mongodb://localhost:27017/todoListDB", {useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://admin-pranesh:doItIfYouCan%40%2B2020@cluster0-cctsm.mongodb.net/todoListDB", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 app.set("view engine", "ejs");
 
@@ -18,121 +15,123 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
 const todoItemsSchema = new mongoose.Schema({
-    item: {
-        type: String,
-        required: [true, 'todo not entered!']
-    }
+    item: String
 });
 
 const todoListSchema = new mongoose.Schema ({
     name: String,
-    todoItemList: [todoItemsSchema]
+    todoList: [todoItemsSchema]
 });
 
-const todoItems = mongoose.model("todos", todoItemsSchema);
-const todoItemList = mongoose.model("todoItemList", todoListSchema);
+const items = mongoose.model("todos", todoItemsSchema);
+const Lists = mongoose.model("todoList", todoListSchema);
 
-app.get("/", function(req, res){
+app.get("/", function(req, res){   
 
-    day = date.gettingIndiaDate();   
-
-    todoItems.find(function(error, todoList){
-        if (error) {
-            console.log(error);
-        } else {
-            res.render("lists", {itemTitle: day, newItem: todoList});        
+    items.find(function(error, todo){
+        if (!error) {
+            res.render("lists", {itemTitle: "TODO", newItem: todo});        
         }
     });
 });
-
-function checkHomeDir (str1) {
-    let end = 0;
-    wordDay.forEach(function(dayyie){
-        if (str1 === dayyie) {
-            end = 1;
-        }
-    });
-
-    if (end === 1) {
-        return true;
-    } else {
-        return false;
-    }
-};
 
 app.post("/", function(req, res){
 
-    let todoItem = req.body.inputsTodos;
-    let submitDirCheck = req.body.listType;
+    let todo = req.body.inputTodos;
+    let headingCheck = req.body.listHeading;
 
-    let todo = new todoItems({
-        item: todoItem,
+    let todos = new items({
+        item: todo
     });
 
-    if (checkHomeDir(submitDirCheck)) {
+    if (headingCheck === "TODO") {
         
-        todo.save();
+        todos.save();
 
         res.redirect("/");
     } else {
 
-        todoItemList.findOne({name: submitDirCheck}, function(err, List){
+        Lists.findOne({name: headingCheck}, function(err, returnList){
 
-            List.todoItemList.push(todo);
-            List.save();
+            if (!err) {
+                
+                returnList.todoList.push(todos);
+                returnList.save();
 
-            res.redirect("/"+submitDirCheck);
+                res.redirect("/"+headingCheck);
+            }
         });
     }
 });
 
 app.post("/delete", function(req, res) {
 
-    let checkId = req.body.check;
-    
-    todoItems.findByIdAndDelete({_id: checkId}, function(err){
+    let checkId = req.body.getId;    
+    let deleteTitle = req.body.getTitle;
 
-        if (!err) {
-            res.redirect("/");
-        }
-    });
+    if (deleteTitle === "TODO") {
+        items.findByIdAndRemove({_id: checkId}, function(err, arr){
+
+            if (!err) {
+                res.redirect("/");
+            }
+        });
+    } else {
+
+        Lists.findOneAndUpdate({ name: deleteTitle}, {$pull: {todoList: {_id: checkId}}},function(err, list){
+
+            if (!err) {
+                res.redirect("/"+deleteTitle);   
+            }
+        });
+    }
 });
 
-const item1 = new todoItems({
+const item1 = new items({
     item: "My Dream Job"
 });
 
-const item2 = new todoItems({
+const item2 = new items({
     item: "My MacBook Air"
 });
 
-const item3 = new todoItems({
+const item3 = new items({
     item: "My Cycle"
+});
+
+const empty = new items({
+    item: ""
 });
 
 const bulkData = [item1, item2, item3];
 
 app.get("/:dirName", function(req, res) {
 
-    let dirName = req.params.dirName;
-    // let todoItem = req.body.inputsTodos;
+    let newListName = _.capitalize(req.params.dirName);
 
-    todoItemList.findOne({name: dirName}, function(error, item) {
+    Lists.findOne({name: newListName}, function(error, newItem) {
 
         if (!error) {
 
-            if (!item) {
+            if (!newItem) {
+                    
+                if (newListName === "Favicon.ico") {
+                    
+                    res.redirect("/");
 
-                const itemLists = new todoItemList({
-                    name: dirName,
-                    todoItemList: bulkData
-                });
-                itemLists.save();
+                } else {
+                    const itemLists = new Lists({
+                        name: newListName,
+                        todoList: []
+                    });
+                    itemLists.save();
+    
+                    res.redirect("/"+newListName);
+                }
 
-                res.redirect("/"+dirName);
-
+                
             } else {
-                res.render("lists", {itemTitle: item.name, newItem: item.todoItemList});
+                res.render("lists", {itemTitle: newItem.name, newItem: newItem.todoList});
             }
         }
     });

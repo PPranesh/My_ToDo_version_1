@@ -6,7 +6,7 @@ html {
 }
 
 h1 {
-  color: #000000;
+  color: #FFFFFF;
   padding: 10px;
 }
 
@@ -16,7 +16,7 @@ h1 {
   width: 50px;
   border-radius: 50%;
   border-color: transparent;
-  background-color: #000000;
+  background-color: #2B32B2;
   color: #F8F9F9;
   font-size: 30px;
   margin: 0 auto;
@@ -32,7 +32,7 @@ h1 {
 }
 
 #heading {
-  background-color: #F8F9F9;
+  background-color: #2B32B2;
   text-align: center;
 }
 

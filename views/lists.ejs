@@ -6,22 +6,25 @@
 
 <div class="box">
     
+    <% newItem.forEach(function(todo) { %>
 
-    <form action="/delete" method="post">
+        <form action="/delete" method="post">
         
-        <% newItem.forEach(function(todo) { %>
             <div class="item">   
-                <input type="checkbox" class="check-box" name="check" value="<%= todo._id %>" onchange="this.form.submit()">
+                <input type="checkbox" class="check-box" name="getId" value="<%= todo._id %>" onchange="this.form.submit()">
                 <p><%= todo.item %></p>            
-                
             </div>
-        <% }); %>
+            <input type="hidden" name="getTitle" value=<%= itemTitle %> ></input>
+            
+        </form>
     
-    </form>
+    <% }); %>
+    
+    
 
     <form class="item" action="/" method="POST">
-        <input id="todos" type="text" name="inputsTodos" maxLength="25" placeholder="Enter new ToDo" autocomplete="off" required>
-        <button id="add" type="submit" name="listType" value=<%= itemTitle %> >+</button>
+        <input id="todos" type="text" name="inputTodos" maxLength="25" placeholder="Enter new ToDo" autocomplete="off" required>
+        <button id="add" type="submit" name="listHeading" value=<%= itemTitle %> >+</button>
     </form>
 
 </div>
