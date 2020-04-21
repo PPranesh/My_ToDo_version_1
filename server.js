@@ -6,7 +6,7 @@ const _ = require("lodash");
 
 const app = express();
 
-mongoose.connect("mongodb+srv://<username>:<password>@cluster0-cctsm.mongodb.net/todoListDB", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect("mongodb+srv://admin-pranesh:doItIfYouCan%40%2B2020@cluster0-cctsm.mongodb.net/todoListDB", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 app.set("view engine", "ejs");
 
