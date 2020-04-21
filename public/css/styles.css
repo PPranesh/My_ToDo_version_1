@@ -24,7 +24,7 @@ h1 {
 }
 
 .box {
-  max-width: 300px;
+  max-width: 400px;
   margin: 50px auto;
   background: #F8F9F9;
   border-radius: 5px;
@@ -102,21 +102,4 @@ input[type="text"]:focus {
 .check-box {
   width: 22px;
   height: 22px;
-<<<<<<< HEAD
-=======
-}
-
-@media screen and (max-width: 600px) {
-  html {
-    min-width: 320px;
-  }
-  
-  #add {
-    margin: 0 12px 0 auto;
-  }
-
-  .box {
-    max-width: 350px;
-  }
->>>>>>> 284a45c3037d0e19549385554454404b54834559
 }
