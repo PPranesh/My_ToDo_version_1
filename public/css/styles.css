@@ -43,9 +43,9 @@ h1 {
   border-bottom: 1px solid #000000;
 }
 
-/* .item:last-child {
+.item:last-child {
   border-bottom: 0;
-} */
+}
 
 input:checked + p {
   text-decoration: line-through;
@@ -102,4 +102,8 @@ input[type="text"]:focus {
 .check-box {
   width: 22px;
   height: 22px;
+}
+
+.todoHeight {
+  height: 500px;
 }
