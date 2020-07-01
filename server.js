@@ -6,7 +6,8 @@ const _ = require("lodash");
 
 const app = express();
 
-mongoose.connect("mongodb+srv://admin-pranesh:doItIfYouCan%40%2B2020@cluster0-cctsm.mongodb.net/todoListDB", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect("mongodb://localhost:27017/todoListDB", {useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect("mongodb+srv://admin-pranesh:doItIfYouCan%40%2B2020@cluster0-cctsm.mongodb.net/todoListDB", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 app.set("view engine", "ejs");
 
@@ -119,18 +120,16 @@ app.get("/:dirName", function(req, res) {
                     
                     res.redirect("/");
 
-                } else {
-                    const itemLists = new Lists({
-                        name: newListName,
-                        todoList: []
-                    });
-                    itemLists.save();
-    
-                    res.redirect("/"+newListName);
-                }
+                } else {               
+                const itemLists = new Lists({
+                    name: newListName,
+                    todoList: []
+                });
+                itemLists.save();
 
-                
-            } else {
+                res.redirect("/"+newListName);
+            } 
+         } else {
                 res.render("lists", {itemTitle: newItem.name, newItem: newItem.todoList});
             }
         }

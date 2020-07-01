@@ -1,6 +1,6 @@
 html {
   background-image: -webkit-linear-gradient(65deg, #2B32B2 50%, #1488CC 50%);
-  min-height: 730px;
+  min-height: 720px;
   min-width: 440px;
   font-family: 'Ubuntu', sans-serif;
 }
@@ -104,6 +104,16 @@ input[type="text"]:focus {
   height: 22px;
 }
 
-.todoHeight {
-  height: 500px;
+@media screen and (max-width: 600px) {
+  html {
+    min-width: 320px;
+  }
+
+  #add {
+    margin: 0 12px 0 auto;
+  }
+
+  .box {
+    max-width: 350px;
+  }
 }
