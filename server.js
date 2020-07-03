@@ -88,6 +88,7 @@ app.post("/delete", function(req, res) {
     }
 });
 
+/*
 const item1 = new items({
     item: "My Dream Job"
 });
@@ -105,7 +106,7 @@ const empty = new items({
 });
 
 const bulkData = [item1, item2, item3];
-
+*/
 app.get("/:dirName", function(req, res) {
 
     let newListName = _.capitalize(req.params.dirName);
