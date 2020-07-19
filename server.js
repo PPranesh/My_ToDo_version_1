@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 // const date = require(__dirname+"/date.js");
 const mongoose = require("mongoose");
-const _ = require("lodash");
+// const _ = require("lodash");
 
 const app = express();
 
@@ -109,7 +109,8 @@ const bulkData = [item1, item2, item3];
 */
 app.get("/:dirName", function(req, res) {
 
-    let newListName = _.capitalize(req.params.dirName);
+//     let newListName = _.capitalize(req.params.dirName);
+    let newListName = req.params.dirName);
 
     Lists.findOne({name: newListName}, function(error, newItem) {
 
